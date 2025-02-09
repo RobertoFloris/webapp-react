@@ -10,7 +10,7 @@ const Home = () => {
 
   console.log(movies)
   return (
-    <div>Home</div>
+    <div>{movies[0]?.title}</div>
   )
 }
 

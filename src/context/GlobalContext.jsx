@@ -13,13 +13,8 @@ const GlobalProvider = ({ children }) => {
   const [movies, setMovies] = useState([])
 
   const fetchMovies = () => {
-
-    console.log(url);
-
     axios.get(url)
       .then(res => {
-        console.log(url)
-        console.log(res.data)
         setMovies(res.data)
       })
       .catch(err => console.log(err));

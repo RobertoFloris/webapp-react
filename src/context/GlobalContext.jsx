@@ -11,6 +11,7 @@ const GlobalProvider = ({ children }) => {
   // const url = "http://localhost:3000/api/movies";
 
   const [movies, setMovies] = useState([])
+  const [movie, setMovie] = useState([])
 
   const fetchMovies = () => {
     axios.get(url)
@@ -20,9 +21,19 @@ const GlobalProvider = ({ children }) => {
       .catch(err => console.log(err));
   }
 
+  const fetchMovie = (id) => {
+    axios.get(`${url}/${id}`)
+      .then(res => {
+        setMovie(res.data)
+      })
+      .catch(err => console.log(err));
+  }
+
   const value = {
     fetchMovies,
-    movies
+    movies,
+    fetchMovie,
+    movie
   }
 
   return (

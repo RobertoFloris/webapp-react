@@ -12,10 +12,12 @@ const Home = () => {
 
   console.log(movies)
   return (
-    <div className="row row-cols-3 my-5">
-      {movies.map(movie => (
-        <Card movie={movie} key={movie.id} />
-      ))}
+    <div className="container my-5">
+      <div className="row">
+        {movies.map(movie => (
+          <Card movie={movie} key={movie.id} />
+        ))}
+      </div>
     </div>
   )
 }

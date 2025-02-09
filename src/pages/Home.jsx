@@ -1,6 +1,8 @@
 import { useGlobalContext } from "../context/GlobalContext"
 import { useEffect } from "react"
 
+import Card from "../components/Card";
+
 const Home = () => {
   const { fetchMovies, movies } = useGlobalContext();
 
@@ -10,7 +12,11 @@ const Home = () => {
 
   console.log(movies)
   return (
-    <div>{movies[0]?.title}</div>
+    <div className="row row-cols-3 my-5">
+      {movies.map(movie => (
+        <Card movie={movie} key={movie.id} />
+      ))}
+    </div>
   )
 }
 

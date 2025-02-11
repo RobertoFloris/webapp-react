@@ -3,6 +3,7 @@ import { useGlobalContext } from "../context/GlobalContext"
 import { useEffect } from "react";
 
 import ReviewCard from "../components/ReviewCard";
+import ReviewForm from "../components/ReviewForm";
 
 const DetailsMovie = () => {
 
@@ -30,9 +31,13 @@ const DetailsMovie = () => {
       </div>
 
       <div className="m-3">
-        {movie.reviews?.map(item => (
+        {movie.reviews.map(item => (
           <ReviewCard key={item.id} review={item} />
         ))}
+      </div>
+
+      <div>
+        <ReviewForm id={id} fetchMovie={fetchMovie} />
       </div>
     </>
 

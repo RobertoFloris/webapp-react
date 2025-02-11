@@ -11,7 +11,7 @@ const GlobalProvider = ({ children }) => {
   // const url = "http://localhost:3000/api/movies";
 
   const [movies, setMovies] = useState([])
-  const [movie, setMovie] = useState({})
+  const [movie, setMovie] = useState({ reviews: [] })
 
   const fetchMovies = () => {
     axios.get(url)

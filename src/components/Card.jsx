@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Card = ({ movie }) => {
-  const { id, title, director, genre, image } = movie;
+  const { id, title, director, genre, image, average_vote } = movie;
   return (
     <div className="col-lg-4 col-md-6 col-sm-12 mb-4 text-center">
       <div className="card">
@@ -10,6 +10,7 @@ const Card = ({ movie }) => {
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{director}</p>
           <p className="card-text">{genre}</p>
+          <p className="card-text">{average_vote}</p>
         </div>
         <div className="my-3">
           <Link to={`/movie/${id}`} className="btn btn-primary">Maggiori informazioni</Link>

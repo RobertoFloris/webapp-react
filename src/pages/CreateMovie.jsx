@@ -1,11 +1,12 @@
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 const CreateMovie = () => {
 
-  const url = import.meta.env.VITE_API_URL;
-
   const navigate = useNavigate();
+
+  const url = import.meta.env.VITE_API_URL;
 
   const initialMovieData = {
     title: "",
@@ -48,7 +49,7 @@ const CreateMovie = () => {
 
     axios.post(url, dataToBE, { headers: { 'Content-Type': 'multipart/form-data' } })
       .then(() => {
-        console.log("inviato")
+        navigate("/")
       })
       .catch(err => console.log(err));
 

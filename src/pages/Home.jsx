@@ -10,7 +10,6 @@ const Home = () => {
     fetchMovies();
   }, []);
 
-  console.log(movies)
   return (
     <div className="container my-5">
       <div className="row">

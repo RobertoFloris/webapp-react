@@ -32,7 +32,12 @@ const CreateMovie = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    const dataToBE = new FormData();
+
+    for (let key in formData) {
+      dataToBE.append(key, formData[key])
+    }
 
   }
 

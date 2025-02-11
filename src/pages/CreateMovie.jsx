@@ -1,6 +1,11 @@
 import { useState } from "react"
+import axios from "axios"
 
 const CreateMovie = () => {
+
+  const url = import.meta.env.VITE_API_URL;
+
+  const navigate = useNavigate();
 
   const initialMovieData = {
     title: "",
@@ -38,6 +43,14 @@ const CreateMovie = () => {
     for (let key in formData) {
       dataToBE.append(key, formData[key])
     }
+
+    console.log(dataToBE)
+
+    axios.post(url, dataToBE, { headers: { 'Content-Type': 'multipart/form-data' } })
+      .then(() => {
+        console.log("inviato")
+      })
+      .catch(err => console.log(err));
 
   }
 
